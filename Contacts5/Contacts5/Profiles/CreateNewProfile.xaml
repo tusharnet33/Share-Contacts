@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Contacts5.Profiles.CreateNewProfile">
+    <!--<ContentPage.Content>-->
+
+
+    <StackLayout Margin="10,35,10,10">
+
+        <Label Text="Enter Your Information" FontSize="Large"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="10,35,10,10">
+            <Label Text="First Name" HorizontalOptions="Center" />
+            <Entry x:Name="FirstName" Keyboard="Plain" ReturnType="Send" Placeholder=""  WidthRequest="100"/>
+        </StackLayout>
+        <StackLayout Margin="10,35,10,10">
+            <Label Text="Last Name" HorizontalOptions="Center" />
+            <Entry x:Name="LastName" Keyboard="Plain" ReturnType="Send" Placeholder=""  WidthRequest="100"/>
+        </StackLayout>
+        <StackLayout Margin="10,35,10,10">
+            <Label Text="Phone Number" TextColor="Red" BackgroundColor="Black" HorizontalOptions="Center" />
+            <Entry Text="732-983-7967" x:Name="PhoneNumber" IsEnabled="False" Keyboard="Plain" ReturnType="Send" Placeholder=""  WidthRequest="100"/>
+        </StackLayout>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Button Text="Save" Clicked="OnSaveButton_Clicked"/>
+            <Button Text="Delete" Clicked="OnDeleteButton_Clicked" Grid.Column="1" />
+        </Grid>
+
+    </StackLayout>
+
+
+    <!--</ContentPage.Content>-->
+</ContentPage>
