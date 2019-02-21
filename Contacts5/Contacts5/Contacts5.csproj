@@ -10,20 +10,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FontAwesome" Version="4.7.0" />
     <PackageReference Include="QRCoder" Version="1.3.5" />
     <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
     <PackageReference Include="Xamarin.Forms" Version="3.5.0.129452" />
     <PackageReference Include="ZXing.Net.Mobile" Version="2.4.1" />
+    <PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.4.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="AddProfile.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
+    <Compile Update="QRCodePage.xaml.cs">
+      <DependentUpon>QRCodePage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Profiles\AllProfiles.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Profiles\CreateNewProfile.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="QRCodePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

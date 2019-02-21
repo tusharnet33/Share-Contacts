@@ -145,6 +145,12 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.5.0.129452" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.1.9" />
+    <PackageReference Include="ZXing.Net.Mobile">
+      <Version>2.4.1</Version>
+    </PackageReference>
+    <PackageReference Include="ZXing.Net.Mobile.Forms">
+      <Version>2.4.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contacts5\Contacts5.csproj">

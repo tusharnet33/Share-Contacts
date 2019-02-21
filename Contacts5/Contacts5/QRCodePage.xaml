@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:zx="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+                xmlns:zxcm="clr-namespace:ZXing.Common;assembly=zxing.portable"
+             x:Class="Contacts5.QRCodePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Scan following QR Code" TextColor="DarkRed" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label>
+            <!--<Label BackgroundColor="LightYellow" WidthRequest="150" HeightRequest="150" x:Name="PhoneNumber" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label>-->
+           
+
+            <forms:ZXingBarcodeImageView 
+                x:Name="codeImage"
+        IsVisible="True"
+       
+        BarcodeFormat="QR_CODE" 
+        HeightRequest="300"
+        WidthRequest="300"
+        BarcodeValue="-1">
+                <zx:ZXingBarcodeImageView.BarcodeOptions>
+                    <zxcm:EncodingOptions Width="300" Height="300" />
+                </zx:ZXingBarcodeImageView.BarcodeOptions>
+            </forms:ZXingBarcodeImageView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

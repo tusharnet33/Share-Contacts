@@ -42,5 +42,18 @@ namespace Contacts5.Profiles
         {
             Navigation.PushAsync(new CreateNewProfile(this.PhoneNumber));
         }
+
+        private  void ShowQRCode_Tapped(object sender, EventArgs e)
+        {
+            var textCellInfo = ((TextCell)sender);
+            var fullName = textCellInfo.Text;
+            var phone = textCellInfo.Detail;
+            Navigation.PushAsync(new QRCodePage(fullName,phone), true);
+        }
+
+        private void ScanNumber_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
