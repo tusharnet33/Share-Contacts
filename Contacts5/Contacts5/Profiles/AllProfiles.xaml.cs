@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Contacts5.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ZXing.Mobile;
+using ZXing.Net.Mobile.Forms;
 
 namespace Contacts5.Profiles
 {
@@ -53,7 +55,40 @@ namespace Contacts5.Profiles
 
         private void ScanNumber_Clicked(object sender, EventArgs e)
         {
+            var scanPage = new ZXingScannerPage();
+            Navigation.PushAsync(scanPage);
 
+            scanPage.OnScanResult += (result) =>
+            {
+                // Stop scanning
+                scanPage.IsScanning = false;
+
+                // Pop the page and show the result
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    await Navigation.PopAsync();
+                    await DisplayAlert("Scanned Barcode", result.Text, "OK");
+                });
+
+                var options = new MobileBarcodeScanningOptions
+                {
+                    AutoRotate = false,
+                    UseFrontCameraIfAvailable = true,
+                    TryHarder = true,
+                    PossibleFormats = new List<ZXing.BarcodeFormat>
+                            {
+                                ZXing.BarcodeFormat.EAN_8, ZXing.BarcodeFormat.EAN_13
+                            }
+                };
+
+                //add options and customize page
+                scanPage = new ZXingScannerPage(options)
+                {
+                    DefaultOverlayTopText = "Align the barcode within the frame",
+                    DefaultOverlayBottomText = string.Empty,
+                    DefaultOverlayShowFlashButton = true
+                };
+            };
         }
     }
 }

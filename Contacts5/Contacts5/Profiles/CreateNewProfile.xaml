@@ -20,7 +20,7 @@
         </StackLayout>
         <StackLayout Margin="10,35,10,10">
             <Label Text="Phone Number" TextColor="Red" BackgroundColor="Black" HorizontalOptions="Center" />
-            <Entry Text="732-983-7967" x:Name="PhoneNumber" IsEnabled="False" Keyboard="Plain" ReturnType="Send" Placeholder=""  WidthRequest="100"/>
+            <Entry Text="" x:Name="PhoneNumber" Keyboard="Plain" ReturnType="Send" Placeholder=""  WidthRequest="100"/>
         </StackLayout>
 
         <Grid>

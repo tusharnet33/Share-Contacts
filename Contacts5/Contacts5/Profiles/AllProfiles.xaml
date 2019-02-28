@@ -5,7 +5,7 @@
              Title="Your Profiles">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Name="AddProfile" Order="Primary" Icon="Microsoft.png" Text="Add Profile" Priority="0" />
+        <ToolbarItem Name="AddProfile" Order="Primary" Icon="Microsoft.png" Text="Add Profile" Priority="0" Clicked="AddNewProfile_Clicked" />
         <ToolbarItem Name="ScanNumber" Order="Primary" Icon="Microsoft.png" Text="Scan" Priority="1" Clicked="ScanNumber_Clicked"/>
 
     </ContentPage.ToolbarItems>
